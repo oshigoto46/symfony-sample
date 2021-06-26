@@ -64,7 +64,7 @@ class __TwigTemplate_48e1cdec585ea8712e1ce411dc4e3f26379cc5818ed91ed3129a4530e47
         わがままbody
         ";
         // line 18
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("react-app");
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("index");
         echo "
         ";
         // line 19
@@ -169,7 +169,7 @@ class __TwigTemplate_48e1cdec585ea8712e1ce411dc4e3f26379cc5818ed91ed3129a4530e47
     </head>
     <body>
         わがままbody
-        {{ encore_entry_script_tags( 'react-app') }}
+        {{ encore_entry_script_tags( 'index') }}
         {% block body %}{% endblock %}
     </body>
 </html>
