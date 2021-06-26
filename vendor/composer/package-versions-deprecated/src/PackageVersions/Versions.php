@@ -120,10 +120,10 @@ final class Versions
   'webmozart/assert' => '1.10.0@6964c76c7804814a842473e0c8fd15bab0f18e25',
   'willdurand/negotiation' => '3.0.0@04e14f38d4edfcc974114a07d2777d90c98f3d9c',
   'symfony/debug-bundle' => 'v5.3.0@b73833ac97189fc809816dfbb02185a1a793b072',
-  'symfony/polyfill-ctype' => '*@0a2b652bc8d6bd39bb514290ed38e7b31facab4d',
-  'symfony/polyfill-iconv' => '*@0a2b652bc8d6bd39bb514290ed38e7b31facab4d',
-  'symfony/polyfill-php72' => '*@0a2b652bc8d6bd39bb514290ed38e7b31facab4d',
-  '__root__' => 'dev-master@0a2b652bc8d6bd39bb514290ed38e7b31facab4d',
+  'symfony/polyfill-ctype' => '*@75e828b54ae9a91719880ab19a50f8348d965439',
+  'symfony/polyfill-iconv' => '*@75e828b54ae9a91719880ab19a50f8348d965439',
+  'symfony/polyfill-php72' => '*@75e828b54ae9a91719880ab19a50f8348d965439',
+  '__root__' => 'dev-master@75e828b54ae9a91719880ab19a50f8348d965439',
 );
 
     private function __construct()

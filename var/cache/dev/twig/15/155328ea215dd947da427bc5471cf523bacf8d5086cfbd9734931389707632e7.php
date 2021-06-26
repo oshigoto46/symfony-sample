@@ -61,10 +61,11 @@ class __TwigTemplate_ba655b47d0c184b469247ab45ba87828bdc22bc4d89b3158c8f9b05e590
         // line 15
         echo "    </head>
     <body>
+        わがままbody
         ";
-        // line 17
-        $this->displayBlock('body', $context, $blocks);
         // line 18
+        $this->displayBlock('body', $context, $blocks);
+        // line 19
         echo "    </body>
 </html>
 ";
@@ -80,7 +81,7 @@ class __TwigTemplate_ba655b47d0c184b469247ab45ba87828bdc22bc4d89b3158c8f9b05e590
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "Welcomessss!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -118,7 +119,7 @@ class __TwigTemplate_ba655b47d0c184b469247ab45ba87828bdc22bc4d89b3158c8f9b05e590
 
     }
 
-    // line 17
+    // line 18
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -137,7 +138,7 @@ class __TwigTemplate_ba655b47d0c184b469247ab45ba87828bdc22bc4d89b3158c8f9b05e590
 
     public function getDebugInfo()
     {
-        return array (  122 => 17,  115 => 14,  113 => 13,  106 => 12,  99 => 10,  97 => 9,  90 => 8,  77 => 5,  68 => 18,  66 => 17,  62 => 15,  60 => 12,  57 => 11,  54 => 8,  50 => 5,  44 => 1,);
+        return array (  123 => 18,  116 => 14,  114 => 13,  107 => 12,  100 => 10,  98 => 9,  91 => 8,  78 => 5,  69 => 19,  67 => 18,  62 => 15,  60 => 12,  57 => 11,  54 => 8,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -146,7 +147,7 @@ class __TwigTemplate_ba655b47d0c184b469247ab45ba87828bdc22bc4d89b3158c8f9b05e590
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Welcomessss!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -158,6 +159,7 @@ class __TwigTemplate_ba655b47d0c184b469247ab45ba87828bdc22bc4d89b3158c8f9b05e590
         {% endblock %}
     </head>
     <body>
+        わがままbody
         {% block body %}{% endblock %}
     </body>
 </html>
