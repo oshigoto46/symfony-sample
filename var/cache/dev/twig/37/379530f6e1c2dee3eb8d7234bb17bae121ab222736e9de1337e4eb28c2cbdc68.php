@@ -51,18 +51,21 @@ class __TwigTemplate_48e1cdec585ea8712e1ce411dc4e3f26379cc5818ed91ed3129a4530e47
         echo "</title>
     </head>
     <body>
+
+         <div id=\"root\"></div>
+         
         ";
-        // line 8
+        // line 11
         $this->displayBlock('body', $context, $blocks);
-        // line 9
+        // line 12
         echo "          ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 15
+        // line 18
         echo "
          ";
-        // line 16
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 19
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 22
         echo "    </body>
 </html>";
         
@@ -83,7 +86,7 @@ class __TwigTemplate_48e1cdec585ea8712e1ce411dc4e3f26379cc5818ed91ed3129a4530e47
 
     }
 
-    // line 8
+    // line 11
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -95,14 +98,14 @@ class __TwigTemplate_48e1cdec585ea8712e1ce411dc4e3f26379cc5818ed91ed3129a4530e47
 
     }
 
-    // line 9
+    // line 12
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 10
+        // line 13
         echo "            <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
             <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Spartan&display=swap\">
             <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css\" integrity=\"sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=\" crossorigin=\"anonymous\" />
@@ -113,14 +116,14 @@ class __TwigTemplate_48e1cdec585ea8712e1ce411dc4e3f26379cc5818ed91ed3129a4530e47
 
     }
 
-    // line 16
+    // line 19
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 17
+        // line 20
         echo "           ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -137,7 +140,7 @@ class __TwigTemplate_48e1cdec585ea8712e1ce411dc4e3f26379cc5818ed91ed3129a4530e47
 
     public function getDebugInfo()
     {
-        return array (  124 => 17,  117 => 16,  106 => 10,  99 => 9,  87 => 8,  74 => 5,  66 => 19,  64 => 16,  61 => 15,  58 => 9,  56 => 8,  50 => 5,  44 => 1,);
+        return array (  127 => 20,  120 => 19,  109 => 13,  102 => 12,  90 => 11,  77 => 5,  69 => 22,  67 => 19,  64 => 18,  61 => 12,  59 => 11,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -149,6 +152,9 @@ class __TwigTemplate_48e1cdec585ea8712e1ce411dc4e3f26379cc5818ed91ed3129a4530e47
         <title>{% block title %}Welcome!{% endblock %}</title>
     </head>
     <body>
+
+         <div id=\"root\"></div>
+         
         {% block body %}{% endblock %}
           {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
