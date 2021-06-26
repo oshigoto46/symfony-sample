@@ -1,4 +1,5 @@
-# Symfony 5.3.2 
+# Sample Symfony App
+Symfony 5.3.2 
 replace .env.sample to .env
 
 # License 
