@@ -1,0 +1,19 @@
+{
+    "name": "shirotabuchi/symfony-sample",
+    "require": {
+        "doctrine/annotations": "^1.13",
+        "doctrine/orm": "^2.9",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shirotabuchi\\SymfonySample\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "oshigoto 46",
+            "email": "oshigoto@email.com"
+        }
+    ]
+}
