@@ -10,6 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\TweetPostRepository;
 use App\Entity\TweetPost;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 class TweetGetController extends AbstractController
 {
     
