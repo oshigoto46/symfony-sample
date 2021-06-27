@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '64a3730e536c1724336d26a605a65a69a50d0c3a',
+        'reference' => 'a2ae71298b82d4f4316251fb4cc2d9e4f1ce8496',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '64a3730e536c1724336d26a605a65a69a50d0c3a',
+            'reference' => 'a2ae71298b82d4f4316251fb4cc2d9e4f1ce8496',
             'dev_requirement' => false,
         ),
         'api-platform/core' => array(
@@ -226,6 +226,15 @@
             'reference' => '13af2502d9bb6f7d33be2de4b51fb68c6cdb476e',
             'dev_requirement' => false,
         ),
+        'monolog/monolog' => array(
+            'pretty_version' => '2.2.0',
+            'version' => '2.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../monolog/monolog',
+            'aliases' => array(),
+            'reference' => '1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
+            'dev_requirement' => false,
+        ),
         'nelmio/cors-bundle' => array(
             'pretty_version' => '2.1.1',
             'version' => '2.1.1.0',
@@ -356,6 +365,7 @@
             'dev_requirement' => false,
             'provided' => array(
                 0 => '1.0',
+                1 => '1.0.0',
             ),
         ),
         'psr/simple-cache-implementation' => array(
@@ -572,6 +582,24 @@
             'install_path' => __DIR__ . '/../symfony/maker-bundle',
             'aliases' => array(),
             'reference' => '702558c5fc5a27796eedad12a82bb27be76247dc',
+            'dev_requirement' => false,
+        ),
+        'symfony/monolog-bridge' => array(
+            'pretty_version' => 'v5.3.0',
+            'version' => '5.3.0.0',
+            'type' => 'symfony-bridge',
+            'install_path' => __DIR__ . '/../symfony/monolog-bridge',
+            'aliases' => array(),
+            'reference' => '84841557874df015ef2843aa16ac63d09f97c7b9',
+            'dev_requirement' => false,
+        ),
+        'symfony/monolog-bundle' => array(
+            'pretty_version' => 'v3.7.0',
+            'version' => '3.7.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/monolog-bundle',
+            'aliases' => array(),
+            'reference' => '4054b2e940a25195ae15f0a49ab0c51718922eb4',
             'dev_requirement' => false,
         ),
         'symfony/password-hasher' => array(

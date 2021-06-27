@@ -17,13 +17,14 @@ function TweetsContainer() {
   
   useEffect(() => {
     //TODO catch error 
-    fetch("http://localhost:8080/api/tweetes")
+    // fetch("http://localhost:8080/api/tweetes")
+    fetch("https://recruitment-mock-data.gjg-ads.io/data")
       .then((response) => response.json())
       .then((data) => {
       alert(JSON.stringify(data)); //to debug
        // setData(JSON.stringify(data)); == > map cant used (caz its already serialized)
-       setData(data);
-        setLoaded(true);
+      setData(data);
+      setLoaded(true);
       });
   }, []);
 

@@ -16,6 +16,7 @@ class TweetPost
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
@@ -38,6 +39,13 @@ class TweetPost
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getTitle(): ?string
@@ -63,54 +71,6 @@ class TweetPost
 
         return $this;
     }
-
-    // public function getTweet(): ?string
-    // {
-    //     return $this->tweet;
-    // }
-
-    // public function setTweet(string $tweet): self
-    // {
-    //     $this->tweet = $tweet;
-
-    //     return $this;
-    // }
-
-    // public function getCreatedDate(): ?\DateTimeInterface
-    // {
-    //     return $this->created_date;
-    // }
-
-    // public function setCreatedDate(\DateTimeInterface $created_date): self
-    // {
-    //     $this->created_date = $created_date;
-
-    //     return $this;
-    // }
-
-    // public function getTweet(): ?string
-    // {
-    //     return $this->tweet;
-    // }
-
-    // public function setTweet(string $tweet): self
-    // {
-    //     $this->tweet = $tweet;
-
-    //     return $this;
-    // }
-
-    // public function getTweet(): ?string
-    // {
-    //     return $this->tweet;
-    // }
-
-    // public function setTweet(string $tweet): self
-    // {
-    //     $this->tweet = $tweet;
-
-    //     return $this;
-    // }
 
 
 }

@@ -9,12 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexTwitterController extends AbstractController
 {
     /**
-     * @Route("/", name="to_do_list")
+     * @Route("/", name="tweet")
      */
     public function index(): Response
     {
         return $this->render('index.html.twig', [
-            'controller_name' => 'hogehoge',
+            'controller_name' => 'this is unncessaary message',
         ]);
     }
 }
