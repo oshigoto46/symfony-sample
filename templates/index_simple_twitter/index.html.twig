@@ -8,12 +8,13 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+
 <div class="example-wrapper">
-
-    your tweet is
- 
-    {{tweet_post}}
-
+      <h6>Simple Twitter Clone(simfony version) </h6>
+     <form method="POST" action="{{ path('create_tweet')}} ">
+        <input name="tweet_post" type="text" id="tweet" placeholder="Tweet(non spa)..." />
+        <button type="submit" class="addBtn">Tweet </button>
+      </form>
 </div>
 
         

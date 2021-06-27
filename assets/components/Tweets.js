@@ -11,8 +11,16 @@ function TweetsContainer() {
   const [loaded, setLoaded] = useState(false);
   const [tweetdata, setData] = useState([]);
 
-  const postTweet = () =>{
-
+  const postTweet = (tweet) =>{
+     
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tweet : tweet })
+     };
+     fetch('http://localhost:8080/api/tweetes/post', requestOptions)
+        .then(response => response.json())
+        //.then(data => this.setState({ tweet: data.id }));
   };
   
   useEffect(() => {

@@ -23,29 +23,25 @@ class TweetPostController extends AbstractController
 {
     
      /**
-     * @Route("/tweet/post", name="create_tweet")
-     * tweet creation
-     */
-
-     public function create(Request $request){
-    //    var_dump($request->request->get('tweet_post'));
-       $tweet_post = $request->request->get('tweet_post');
-
-    //    if(is_null($tweet_post)){
-    //        return $this->redirectToRoute('to_do_list'); // it doesnt work TODO
-    //    }
-
-       $em = $this->getDoctrine()->getManager();
-       $tweet = new TweetPost;
-       $tweet->setId(rand(0, 10000)); // work around -> auto increment is good
-       $tweet->setTitle($tweet_post); // column name is mistaken TODO
-       $tweet->setStatus(true); 
-       $em->persist($tweet);
-       $em->flush();
+      *  insertDB
+      *  @param 
+      */
+      
+     private function _insertDB(String $tweet_post){
 
 
-       return $this->render('tweet_post/index.html.twig',['tweet_post'=> $tweet_post ]);
+        $em = $this->getDoctrine()->getManager();
+        $tweet = new TweetPost;
+        $tweet->setId(rand(0, 10000)); // work around -> auto increment is good
+        $tweet->setTitle($tweet_post); // column name is mistaken TODO
+        $tweet->setStatus(true); 
+        $em->persist($tweet);
+        $em->flush();
+ 
      }
+       
+    
+
 
      /**
      * @Route("/api/tweetes", name="public")

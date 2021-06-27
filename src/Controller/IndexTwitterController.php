@@ -8,12 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class IndexTwitterController extends AbstractController
 {
-    /**
-     * @Route("/", name="tweet")
+     /**
+     * @Route("/spa_post", name="tweet")
      */
-    public function index(): Response
+    public function spa_index(): Response
     {
-        return $this->render('index.html.twig', [
+        return $this->render('spa_tweet_post/index.html.twig', [
             'controller_name' => 'this is unncessaary message',
         ]);
     }
