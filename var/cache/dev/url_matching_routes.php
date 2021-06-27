@@ -11,7 +11,7 @@ return [
         '/simple_post' => [[['_route' => 'index_simple_twitter', '_controller' => 'App\\Controller\\IndexSimpleTwitterController::index'], null, null, null, false, false, null]],
         '/tweet/post' => [[['_route' => 'create_tweet', '_controller' => 'App\\Controller\\IndexSimpleTwitterController::create'], null, null, null, false, false, null]],
         '/spa_post' => [[['_route' => 'tweet', '_controller' => 'App\\Controller\\IndexTwitterController::spa_index'], null, null, null, false, false, null]],
-        '/api/tweetes' => [[['_route' => 'public', '_controller' => 'App\\Controller\\TweetPostController::returnAPITweets'], null, null, null, false, false, null]],
+        '/api/tweetes' => [[['_route' => 'public', '_controller' => 'App\\Controller\\TweetGetController::returnAPITweets'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

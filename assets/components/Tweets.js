@@ -13,14 +13,14 @@ function TweetsContainer() {
 
   const postTweet = (tweet) =>{
      
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ tweet : tweet })
-     };
-     fetch('http://localhost:8080/api/tweetes/post', requestOptions)
-        .then(response => response.json())
-        //.then(data => this.setState({ tweet: data.id }));
+    // const requestOptions = {
+    //   method: 'GET',
+    //   headers: { 'Content-Type': 'application/json' },
+    //  // body: JSON.stringify({ tweet : tweet })
+    //  };
+    //  fetch('http://localhost:8080/api/posttweets', requestOptions)
+    //     .then(response => response.json())
+    //     //.then(data => this.setState({ tweet: data.id }));
   };
   
   useEffect(() => {
@@ -29,7 +29,7 @@ function TweetsContainer() {
     // fetch("https://recruitment-mock-data.gjg-ads.io/data")
       .then((response) => response.json())
       .then((data) => {
-      // alert(JSON.stringify(data)); //to debug
+       alert(JSON.stringify(data)); //to debug
       // setData(JSON.stringify(data)); == > map cant used (caz its already serialized)
       setData(data);
       setLoaded(true);
