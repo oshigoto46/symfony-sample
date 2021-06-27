@@ -10,7 +10,7 @@ return [
     [ // $staticRoutes
         '/' => [[['_route' => 'to_do_list', '_controller' => 'App\\Controller\\ToDoListController::index'], null, null, null, false, false, null]],
         '/tweet/post' => [[['_route' => 'create_tweet', '_controller' => 'App\\Controller\\TweetPostController::create'], null, null, null, false, false, null]],
-        '/api/public' => [[['_route' => 'public', '_controller' => 'App\\Controller\\TweetPostController::publicAction'], null, null, null, false, false, null]],
+        '/api/tweetes' => [[['_route' => 'public', '_controller' => 'App\\Controller\\TweetPostController::returnTweets'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

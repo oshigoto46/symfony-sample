@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import  Header  from './components/Header';
-import ModalContainer from './components/ModalContainer';
+import TweetsContainer from './components/Tweets';
 
 // import Home from "./components/Home";
 
@@ -11,7 +10,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 {/* <Header></Header> */}
-                <ModalContainer></ModalContainer>
+                <TweetsContainer></TweetsContainer>
             </BrowserRouter>
         )
     }

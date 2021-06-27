@@ -37,11 +37,11 @@ class TweetPostController extends AbstractController
      }
 
      /**
-     * @Route("/api/public", name="public")
+     * @Route("/api/tweetes", name="public")
      * @return JsonResponse
      */
 
-    public function publicAction()
+    public function returnTweets()
     {
 
         $data = [
