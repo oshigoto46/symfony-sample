@@ -43,5 +43,3 @@ class TweetPostController extends AbstractController
 
        return $this->render('tweet_post/index.html.twig',['tweet_post'=> $tweet_post ]);
      }
-
-}

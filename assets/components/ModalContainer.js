@@ -1,7 +1,7 @@
 // ModalContainer.js
 import React, { Component } from 'react';
 import { useState, useEffect } from "react";
-import Modal from 'react-modal';
+import "./App.css";
 
 function ModalContainer() {
   const state = {
@@ -10,23 +10,19 @@ function ModalContainer() {
   const [loaded, setLoaded] = useState(false);
   const [data, setData] = useState([]);
 
-  const toggleModal = () => {
-    this.setState({
-      isModalOpen: ! state.isModalOpen,
-    });
-  };
-
   const postTweet = () =>{
 
   };
   
   useEffect(() => {
-    fetch("https://recruitment-mock-data.gjg-ads.io/data")
+    // fetch("https://recruitment-mock-data.gjg-ads.io/data")
+    fetch("http://localhost:8080/api/tweet_posts")
       .then((response) => response.json())
       .then((data) => {
         setData(data.data);
         setLoaded(true);
-        alert(data);
+        alert(JSON.stringify(data.data));
+        // alert(data);
       });
   }, []);
 
@@ -34,7 +30,13 @@ function ModalContainer() {
       <div>
 
         Simple Twitter on SPA 
-        <button onClick={toggleModal}>Tweet</button>
+        <button onClick={postTweet}>Tweet</button>
+        <input
+          className="search-input"
+          type="text"
+          onChange={(e) => postTweet(e.target.value)}
+          placeholder="tweet"
+        />
         {/* <Modal
           isOpen={state.isModalOpen}
           onRequestClose={toggleModal}
