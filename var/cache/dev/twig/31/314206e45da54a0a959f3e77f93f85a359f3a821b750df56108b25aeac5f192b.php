@@ -56,7 +56,7 @@ class __TwigTemplate_7273cf056ded6261bb00f0561ace78adc9ecd9982c3466318f92cb2dfa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "This is specific page title!";
+        echo "Hello ToDoListController!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -70,7 +70,21 @@ class __TwigTemplate_7273cf056ded6261bb00f0561ace78adc9ecd9982c3466318f92cb2dfa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "This is specific page!
+        echo "<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class=\"example-wrapper\">
+      <h1>Simple Twitter Clone </h1>
+     <form method=\"POST\" action=\"";
+        // line 13
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_tweet");
+        echo " \">
+        <input name=\"tweet_post\" type=\"text\" id=\"tweet\" placeholder=\"Task title...\" />
+        <button type=\"submit\" class=\"addBtn\">Tweet </button>
+      </form>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -89,17 +103,29 @@ class __TwigTemplate_7273cf056ded6261bb00f0561ace78adc9ecd9982c3466318f92cb2dfa4
 
     public function getDebugInfo()
     {
-        return array (  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  82 => 13,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}This is specific page title!{% endblock %}
+{% block title %}Hello ToDoListController!{% endblock %}
 
 {% block body %}
-This is specific page!
-{% endblock %}", "index.html.twig", "/Users/shirotabuchi/symfony-sample/templates/index.html.twig");
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class=\"example-wrapper\">
+      <h1>Simple Twitter Clone </h1>
+     <form method=\"POST\" action=\"{{ path('create_tweet')}} \">
+        <input name=\"tweet_post\" type=\"text\" id=\"tweet\" placeholder=\"Task title...\" />
+        <button type=\"submit\" class=\"addBtn\">Tweet </button>
+      </form>
+</div>
+{% endblock %}
+", "index.html.twig", "/Users/shirotabuchi/symfony-sample/templates/index.html.twig");
     }
 }

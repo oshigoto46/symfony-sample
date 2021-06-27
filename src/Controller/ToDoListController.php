@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class ToDoListController extends AbstractController
 {
     /**
-     * @Route("/to/do/list", name="to_do_list")
+     * @Route("/", name="to_do_list")
      */
     public function index(): Response
     {
-        return $this->render('to_do_list/index.html.twig', [
+        return $this->render('index.html.twig', [
             'controller_name' => 'ToDoListController',
         ]);
     }
