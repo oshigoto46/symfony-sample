@@ -76,12 +76,12 @@ class __TwigTemplate_7273cf056ded6261bb00f0561ace78adc9ecd9982c3466318f92cb2dfa4
 </style>
 
 <div class=\"example-wrapper\">
-      <h1>Simple Twitter Clone </h1>
+      <h6>Simple Twitter Clone(simfony version) </h6>
      <form method=\"POST\" action=\"";
         // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_tweet");
         echo " \">
-        <input name=\"tweet_post\" type=\"text\" id=\"tweet\" placeholder=\"Task title...\" />
+        <input name=\"tweet_post\" type=\"text\" id=\"tweet\" placeholder=\"Tweet(non spa)...\" />
         <button type=\"submit\" class=\"addBtn\">Tweet </button>
       </form>
 </div>
@@ -119,9 +119,9 @@ class __TwigTemplate_7273cf056ded6261bb00f0561ace78adc9ecd9982c3466318f92cb2dfa4
 </style>
 
 <div class=\"example-wrapper\">
-      <h1>Simple Twitter Clone </h1>
+      <h6>Simple Twitter Clone(simfony version) </h6>
      <form method=\"POST\" action=\"{{ path('create_tweet')}} \">
-        <input name=\"tweet_post\" type=\"text\" id=\"tweet\" placeholder=\"Task title...\" />
+        <input name=\"tweet_post\" type=\"text\" id=\"tweet\" placeholder=\"Tweet(non spa)...\" />
         <button type=\"submit\" class=\"addBtn\">Tweet </button>
       </form>
 </div>

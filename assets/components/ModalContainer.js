@@ -1,31 +1,48 @@
 // ModalContainer.js
 import React, { Component } from 'react';
+import { useState, useEffect } from "react";
 import Modal from 'react-modal';
 
-class ModalContainer extends Component {
-  state = {
+function ModalContainer() {
+  const state = {
     isModalOpen: false,
   };
+  const [loaded, setLoaded] = useState(false);
+  const [data, setData] = useState([]);
 
-  toggleModal = () => {
+  const toggleModal = () => {
     this.setState({
-      isModalOpen: !this.state.isModalOpen,
+      isModalOpen: ! state.isModalOpen,
     });
   };
 
-  render() {
+  const postTweet = () =>{
+
+  };
+  
+  useEffect(() => {
+    fetch("https://recruitment-mock-data.gjg-ads.io/data")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data.data);
+        setLoaded(true);
+        alert(data);
+      });
+  }, []);
+
     return (
       <div>
-        <button onClick={this.toggleModal}>Upload Photo</button>
-        <Modal
-          isOpen={this.state.isModalOpen}
-          onRequestClose={this.toggleModal}
+
+        Simple Twitter on SPA 
+        <button onClick={toggleModal}>Tweet</button>
+        {/* <Modal
+          isOpen={state.isModalOpen}
+          onRequestClose={toggleModal}
         >
-          {this.props.children}
-        </Modal>
+        </Modal> */}
       </div>
     );
-  }
+  
 }
 
 export default ModalContainer;
