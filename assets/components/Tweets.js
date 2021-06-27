@@ -16,11 +16,13 @@ function TweetsContainer() {
   };
   
   useEffect(() => {
+    //TODO catch error 
     fetch("http://localhost:8080/api/tweetes")
       .then((response) => response.json())
       .then((data) => {
-        alert(JSON.stringify(data));
-        setData(JSON.stringify(data));
+       // alert(JSON.stringify(data));
+       // setData(JSON.stringify(data)); == > map cant used (caz its already serialized)
+       setData(data);
         setLoaded(true);
       });
   }, []);
@@ -36,8 +38,11 @@ function TweetsContainer() {
         />
        
         {/* {data.map((d) => {<div> d.title </div>})} */}
+
         <button onClick={postTweet}>Tweet</button>
-        <ListItem> <li> tweet data -> {tweetdata} </li> </ListItem>
+        {tweetdata.map(function(d, idx){
+              return (<li key={idx}>{d.description}</li>)
+         })}
       </div>
     ): (
       <h1 className="mt-5"> Tweet Loading...</h1>
