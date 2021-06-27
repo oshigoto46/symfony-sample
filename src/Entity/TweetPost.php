@@ -8,7 +8,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=TweetPostRepository::class)
- * @ApiResource
+ * #@ApiResource
  */
 class TweetPost
 {
