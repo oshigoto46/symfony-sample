@@ -352,11 +352,11 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Controller\ToDoListController" class="App\Controller\ToDoListController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\IndexTwitterController" class="App\Controller\IndexTwitterController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\ToDoListController"/>
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\IndexTwitterController"/>
       </call>
     </service>
     <service id="App\Controller\TweetPostController" class="App\Controller\TweetPostController" public="true" autowire="true" autoconfigure="true">
@@ -5067,9 +5067,9 @@
         <argument key="_default" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]"/>
       </argument>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ToDoListController" class="App\Controller\ToDoListController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ToDoListController" class="App\Controller\ToDoListController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ToDoListController" class="App\Controller\ToDoListController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\IndexTwitterController" class="App\Controller\IndexTwitterController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\IndexTwitterController" class="App\Controller\IndexTwitterController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\IndexTwitterController" class="App\Controller\IndexTwitterController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TweetPostController" class="App\Controller\TweetPostController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TweetPostController" class="App\Controller\TweetPostController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\TweetPostController" class="App\Controller\TweetPostController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5539,9 +5539,9 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.W9y3dzm.App\Controller\ToDoListController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ToDoListController"/>
-      <argument>App\Controller\ToDoListController</argument>
+    <service id=".service_locator.W9y3dzm.App\Controller\IndexTwitterController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\IndexTwitterController"/>
+      <argument>App\Controller\IndexTwitterController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>

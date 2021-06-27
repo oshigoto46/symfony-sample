@@ -20,7 +20,7 @@ function TweetsContainer() {
     fetch("http://localhost:8080/api/tweetes")
       .then((response) => response.json())
       .then((data) => {
-       // alert(JSON.stringify(data));
+      alert(JSON.stringify(data)); //to debug
        // setData(JSON.stringify(data)); == > map cant used (caz its already serialized)
        setData(data);
         setLoaded(true);
@@ -45,7 +45,7 @@ function TweetsContainer() {
          })}
       </div>
     ): (
-      <h1 className="mt-5"> Tweet Loading...</h1>
+      <h4 className="mt-5"> Tweet Loading...</h4>
     );;
   
 }

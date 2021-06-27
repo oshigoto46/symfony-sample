@@ -9,7 +9,6 @@ class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                {/* <Header></Header> */}
                 <TweetsContainer></TweetsContainer>
             </BrowserRouter>
         )

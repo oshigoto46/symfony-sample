@@ -41,8 +41,12 @@ class TweetPostController extends AbstractController
      * @return JsonResponse
      */
 
-    public function returnTweets()
+    public function returnAPITweets()
     {
+
+        $tasks = $this->getDoctrine()->getRepository(TweetPost::class)->findBy([], []);
+
+        // $this->logger->info('YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO');
 
         $data = [
             [
@@ -65,7 +69,7 @@ class TweetPostController extends AbstractController
             ],
         ];
 
-        return new JsonResponse($data);
+        return new JsonResponse($tasks);
     }
 
 }
