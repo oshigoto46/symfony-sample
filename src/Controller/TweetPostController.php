@@ -31,9 +31,9 @@ class TweetPostController extends AbstractController
     //    var_dump($request->request->get('tweet_post'));
        $tweet_post = $request->request->get('tweet_post');
 
-       if(is_null($tweet_post)){
-           return $this->redirectToRoute('to_do_list'); // it doesnt work TODO
-       }
+    //    if(is_null($tweet_post)){
+    //        return $this->redirectToRoute('to_do_list'); // it doesnt work TODO
+    //    }
 
        $em = $this->getDoctrine()->getManager();
        $tweet = new TweetPost;
@@ -67,9 +67,32 @@ class TweetPostController extends AbstractController
        $_id = 0 ;
        foreach ($tweets as $tweet){
             $_id += 1;
-            $rows[$_id] = ["tweet" =>  $tweet->getTitle()];
+            array_push($rows, ["id" => $_id , 
+                               "tweet" =>  $tweet->getTitle()
+                               ]);
        }
 
+
+    //    $data = [
+    //     [
+    //         'albumId' => "1",
+    //         "id" => 1,
+    //         "title" => "accusamus beatae ad facilis cum similique qui sunt",
+    //         "description" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+    //     ],
+    //     [
+    //         'albumId' => "2",
+    //         "id" => 2,
+    //         "title" => "accusamus beatae ad facilis cum similique qui sunt",
+    //         "description" => "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text"
+    //     ],
+    //     [
+    //         'albumId' => "3",
+    //         "id" => 3,
+    //         "title" => "accusamus beatae ad facilis cum similique qui sunt",
+    //         "description" => "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"
+    //     ],
+    //     ];
     //    var_dump($tweets);
     //    var_dump($rows);
 
@@ -79,7 +102,8 @@ class TweetPostController extends AbstractController
         // \Doctrine\Common\Util\Debug::dump($tweets);
         //return new Response('hoge',$tweets[0]->getTitle());
         //return JsonResponse($rows);
-        return new JsonResponse(['tweet' => "hogehoge"]);
+        //return new JsonResponse(['tweet' => "hogehoge"]);
+        return new JsonResponse($rows);
     }
 
 }

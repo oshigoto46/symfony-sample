@@ -17,12 +17,12 @@ function TweetsContainer() {
   
   useEffect(() => {
     //TODO catch error 
-    // fetch("http://localhost:8080/api/tweetes")
-    fetch("https://recruitment-mock-data.gjg-ads.io/data")
+    fetch("http://localhost:8080/api/tweetes")
+    // fetch("https://recruitment-mock-data.gjg-ads.io/data")
       .then((response) => response.json())
       .then((data) => {
-      alert(JSON.stringify(data)); //to debug
-       // setData(JSON.stringify(data)); == > map cant used (caz its already serialized)
+      // alert(JSON.stringify(data)); //to debug
+      // setData(JSON.stringify(data)); == > map cant used (caz its already serialized)
       setData(data);
       setLoaded(true);
       });
@@ -38,11 +38,9 @@ function TweetsContainer() {
           placeholder="tweet (on spa)"
         />
        
-        {/* {data.map((d) => {<div> d.title </div>})} */}
-
         <button onClick={postTweet}>Tweet</button>
         {tweetdata.map(function(d, idx){
-              return (<li key={idx}>{d.description}</li>)
+              return (<li key={idx}>tweet{idx} is {d.tweet}</li>)
          })}
       </div>
     ): (
