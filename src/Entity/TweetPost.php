@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use App\Repository\TweetPostRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=TweetPostRepository::class)
+ * @ApiResource
  */
 class TweetPost
 {
