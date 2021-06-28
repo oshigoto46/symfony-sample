@@ -28,8 +28,8 @@ function TweetsContainer() {
   };
   
   useEffect(() => {
-    //TODO catch error 
-    alert("useEffect");
+    // TODO catch error 
+    // alert("useEffect");
     fetch("http://localhost:8080/api/tweetes4")
       .then((response) => response.json())
       .then((data) => {

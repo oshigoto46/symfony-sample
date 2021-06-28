@@ -21,10 +21,10 @@ class TweetPost2Controller extends AbstractController
      */
     public function TweetsPost(Request $request)
     {
-        $tweet_content = json_decode($request->getContent(), true)['tweet_post']["content"];
+        $tweet_content = json_decode($request->getContent(), true)['tweet_post']["tweet"];
         $ret =  $this->_create($tweet_content);   
-        var_dump("====var_dump====");
-        var_dump($tweet_content);
+        // var_dump("====var_dump====");
+        // var_dump($tweet_content);
         //var_dump(json_decode($request->getContent(), true));
         if(!$ret){
           return new JsonResponse(array("error"=>BAD_REQUEST));

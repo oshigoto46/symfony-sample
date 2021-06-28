@@ -26,16 +26,11 @@ class TweetPostController extends AbstractController
 
         $tweets = $this->getDoctrine()->getRepository(TweetPost::class)->findAll();
 
-        // $logger = new MyLogger(LoggerInterface::class);
-        // $logger->setPublic(true);
-
-        //$logger->error('I just got the logger');
-
-  
        $rows = [];
-       $_id = 0 ;
+       $_id = 1;
        foreach ($tweets as $tweet){
             $_id += 1;
+           // var_dump($tweet);
             array_push($rows, ["id" => $_id , 
                                "tweet" =>  $tweet->getTitle()
                                ]);

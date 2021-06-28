@@ -32,7 +32,7 @@ class TweetGetController extends AbstractController
 
         //$logger->error('I just got the logger');
 
-  
+       var_dump($tweets);
        $rows = [];
        $_id = 0 ;
        foreach ($tweets as $tweet){

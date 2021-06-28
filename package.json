@@ -8,9 +8,12 @@
         "@symfony/stimulus-bridge": "^2.0.0",
         "@symfony/webpack-encore": "^0.21.0",
         "core-js": "^3.0.0",
+        "envify": "^4.1.0",
         "jquery": "^3.6.0",
         "regenerator-runtime": "^0.13.2",
         "stimulus": "^2.0.0",
+        "terser": "^5.7.1",
+        "uglifyify": "^5.0.2",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
