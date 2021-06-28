@@ -21,13 +21,15 @@ class TweetPost2Controller extends AbstractController
      */
     public function TweetsPost(Request $request)
     {
-        $tweet_content = json_decode($request->getContent(), true)['tweet_post'];
+        $tweet_content = json_decode($request->getContent(), true)['tweet_post']["content"];
         $ret =  $this->_create($tweet_content);   
-        //echo($tweet_content);
+        var_dump("====var_dump====");
+        var_dump($tweet_content);
+        //var_dump(json_decode($request->getContent(), true));
         if(!$ret){
           return new JsonResponse(array("error"=>BAD_REQUEST));
         }
-        return new JsonResponse(array("success"=>SUCCESS));
+          return new JsonResponse(array("success"=>SUCCESS));
        
     }
 
@@ -39,13 +41,13 @@ class TweetPost2Controller extends AbstractController
 
     private function _create($tweet_post){
 
-        if(is_null($tweet_post)){
+        if(is_null($tweet_post) || !is_string($tweet_post)){
             return  false; 
         }
  
         $em = $this->getDoctrine()->getManager();
         $tweet = new TweetPost;
-        $tweet->setId(rand(0, 10000)); // work around -> auto increment is good
+        $tweet->setId(11); // work around -> auto increment is good
         $tweet->setTitle($tweet_post); // column name is mistaken TODO
         $tweet->setStatus(true); 
         $em->persist($tweet);
