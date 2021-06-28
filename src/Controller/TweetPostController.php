@@ -27,15 +27,15 @@ class TweetPostController extends AbstractController
         $tweets = $this->getDoctrine()->getRepository(TweetPost::class)->findAll();
 
        $rows = [];
-       $_id = 1;
+    //    $_id = 1;
        foreach ($tweets as $tweet){
-            $_id += 1;
+            // $_id += 1;
            // var_dump($tweet);
-            array_push($rows, ["id" => $_id , 
+            array_push($rows, ["id" =>     $tweet->getId() , 
                                "tweet" =>  $tweet->getTitle()
                                ]);
        }
-        return new JsonResponse($rows);
+        return new JsonResponse(array_reverse($rows));
     }
    
 

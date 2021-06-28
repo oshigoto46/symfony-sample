@@ -51,8 +51,26 @@ function TweetsContainer() {
     setReloaded(!reloaded);
   };
 
+  const button = {
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '4px',
+    background: '#1890ff',
+    color: '#fff',
+    fontSize: '14px',
+    cursor: 'pointer',
+    transition: '.3s background',
+    '&:hover': {
+      background: '#40a9ff'
+    }
+  };
+
+  const ul_style = {
+   // background: '#0dd212'
+  }
+
     return loaded ?  (
-      <div>
+      <div className="wrapper" style={{color: '#0d1a26', fontWeight: 400}}> 
         Simple Twitter on SPA
         <form onSubmit={handleSubmit}>
           <input
@@ -61,12 +79,16 @@ function TweetsContainer() {
             // onChange={handleChange}
             placeholder="tweet (on spa)"
           />
-           <input type="submit" value="Tweet" />
+           <input style={button} type="submit" value="Tweet" />
          
         </form>
+        Recent Tweet 
+        <ul style={ul_style} >
         {tweetdata.length > 0 ? tweetdata.map(function(d, idx){
-              return (<li key={idx}>tweet{idx} is {d.tweet}</li>)
+              return (<li key={idx}>tweet{tweetdata.length - idx} is  {d.tweet }  </li>)
          }): "no data"}
+         </ul>
+        
       </div>
     ): (
       <h4 className="mt-5"> Tweet Loading...</h4>

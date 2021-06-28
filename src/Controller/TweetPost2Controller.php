@@ -47,7 +47,7 @@ class TweetPost2Controller extends AbstractController
  
         $em = $this->getDoctrine()->getManager();
         $tweet = new TweetPost;
-        $tweet->setId(11); // work around -> auto increment is good
+        // $tweet->setId(11); // work around -> auto increment is good
         $tweet->setTitle($tweet_post); // column name is mistaken TODO
         $tweet->setStatus(true); 
         $em->persist($tweet);

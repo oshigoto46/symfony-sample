@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerSEglXHD\App_KernelDevDebugContainer([
     'container.build_hash' => 'SEglXHD',
-    'container.build_id' => '13a62239',
-    'container.build_time' => 1624886355,
+    'container.build_id' => 'f4a7c099',
+    'container.build_time' => 1624903212,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerSEglXHD');

@@ -34,11 +34,9 @@ class TweetGetController extends AbstractController
 
        var_dump($tweets);
        $rows = [];
-       $_id = 0 ;
        foreach ($tweets as $tweet){
-            $_id += 1;
-            array_push($rows, ["id" => $_id , 
-                               "tweet" =>  $tweet->getTitle()
+            array_push($rows, ["id"    =>  $tweet->getId() ,
+                               "tweet" =>  $tweet->getTitle()."hogehogheogheohgoe"
                                ]);
        }
         return new JsonResponse($rows);
