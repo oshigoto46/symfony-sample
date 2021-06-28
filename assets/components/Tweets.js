@@ -13,19 +13,19 @@ function TweetsContainer() {
 
   const postTweet = (tweet) =>{
      
-    // const requestOptions = {
-    //   method: 'GET',
-    //   headers: { 'Content-Type': 'application/json' },
-    //  // body: JSON.stringify({ tweet : tweet })
-    //  };
-    //  fetch('http://localhost:8080/api/posttweets', requestOptions)
-    //     .then(response => response.json())
-    //     //.then(data => this.setState({ tweet: data.id }));
+    const requestOptions = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+     // body: JSON.stringify({ tweet : tweet })
+     };
+     fetch('http://localhost:8080/api/posttweets', requestOptions)
+        .then(response => response.json())
+        //.then(data => this.setState({ tweet: data.id }));
   };
   
   useEffect(() => {
     //TODO catch error 
-    fetch("http://localhost:8080/api/tweetes")
+    fetch("http://localhost:8080/api/tweetes4")
     // fetch("https://recruitment-mock-data.gjg-ads.io/data")
       .then((response) => response.json())
       .then((data) => {

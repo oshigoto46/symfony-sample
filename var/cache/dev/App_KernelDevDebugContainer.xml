@@ -396,6 +396,20 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\TweetGetController"/>
       </call>
     </service>
+    <service id="App\Controller\TweetPost2Controller" class="App\Controller\TweetPost2Controller" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\TweetPost2Controller"/>
+      </call>
+    </service>
+    <service id="App\Controller\TweetPostController" class="App\Controller\TweetPostController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\TweetPostController"/>
+      </call>
+    </service>
     <service id="App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -5196,6 +5210,12 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TweetGetController" class="App\Controller\TweetGetController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TweetGetController" class="App\Controller\TweetGetController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\TweetGetController" class="App\Controller\TweetGetController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TweetPost2Controller" class="App\Controller\TweetPost2Controller" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TweetPost2Controller" class="App\Controller\TweetPost2Controller" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\TweetPost2Controller" class="App\Controller\TweetPost2Controller" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TweetPostController" class="App\Controller\TweetPostController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TweetPostController" class="App\Controller\TweetPostController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\TweetPostController" class="App\Controller\TweetPostController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TweetPostRepository" class="App\Repository\TweetPostRepository" autowire="true" abstract="true"/>
@@ -5749,6 +5769,18 @@
     <service id=".service_locator.W9y3dzm.App\Controller\TweetGetController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\TweetGetController"/>
       <argument>App\Controller\TweetGetController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\TweetPost2Controller" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\TweetPost2Controller"/>
+      <argument>App\Controller\TweetPost2Controller</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\TweetPostController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\TweetPostController"/>
+      <argument>App\Controller\TweetPostController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
