@@ -9,6 +9,7 @@ function TweetsContainer() {
     isModalOpen: false,
   };
   const [loaded, setLoaded] = useState(false);
+  const [reloaded, setReloaded] = useState(false);
   const [form,setForm] = useState(false);
   const [tweetdata, setData] = useState([]);
 
@@ -17,11 +18,9 @@ function TweetsContainer() {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      // body:    { "tweet_post" : tweet }
       body: JSON.stringify({ "tweet_post": {
         tweet
-      }}),
-      // body: JSON.stringify({ tweet_post : tweet })
+      }})
      };
      fetch('http://localhost:8080/tweet/post2', requestOptions)
         .then(response => response.json())
@@ -34,13 +33,11 @@ function TweetsContainer() {
     fetch("http://localhost:8080/api/tweetes4")
       .then((response) => response.json())
       .then((data) => {
-      // alert("hoge");
-       alert(JSON.stringify(data)); //to debug
-      // setData(JSON.stringify(data)); == > map cant used (caz its already serialized)
+      // alert(JSON.stringify(data)); //to debug
       setData(data);
       setLoaded(true);
       });
-  }, []);
+  }, [loaded,reloaded]);
 
   const handleChange =(e) => {
     // e.preventDefault();
@@ -49,9 +46,9 @@ function TweetsContainer() {
 
   const handleSubmit =(e) => {
     e.preventDefault();
-    //alert(e.target.value);
     postTweet(form);
     setForm("");
+    setReloaded(!reloaded);
   };
 
     return loaded ?  (
@@ -67,7 +64,6 @@ function TweetsContainer() {
            <input type="submit" value="Tweet" />
          
         </form>
-        {alert(JSON.stringify(tweetdata))}
         {tweetdata.length > 0 ? tweetdata.map(function(d, idx){
               return (<li key={idx}>tweet{idx} is {d.tweet}</li>)
          }): "no data"}
