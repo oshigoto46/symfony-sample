@@ -4,38 +4,55 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
+use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\TweetPostRepository;
 use App\Entity\TweetPost;
 
-use Symfony\Component\HttpFoundation\JsonResponse;
+const BAD_REQUEST = 400;
+const SUCCESS     = 200;
 
 class TweetPost2Controller extends AbstractController
 {
     /**
      * @Route("/tweet/post2", name="tweet_post2")
      */
-    public function returnAPITweets1()
+    public function TweetsPost(Request $request)
     {
+        $tweet_content = json_decode($request->getContent(), true)['tweet_post'];
+        $ret =  $this->_create($tweet_content);   
+        //echo($tweet_content);
+        if(!$ret){
+          return new JsonResponse(array("error"=>BAD_REQUEST));
+        }
+        return new JsonResponse(array("success"=>SUCCESS));
+       
+    }
 
-        $tweets = $this->getDoctrine()->getRepository(TweetPost::class)->findAll();
+   
+    // !!!!!!!!!!!!!!!!!!!!!
+    // TODO should transport this to Repository
+    // !!!!!!!!!!!!!!!!!!!!!
+   
 
-        // $logger = new MyLogger(LoggerInterface::class);
-        // $logger->setPublic(true);
+    private function _create($tweet_post){
 
-        //$logger->error('I just got the logger');
+        if(is_null($tweet_post)){
+            return  false; 
+        }
+ 
+        $em = $this->getDoctrine()->getManager();
+        $tweet = new TweetPost;
+        $tweet->setId(rand(0, 10000)); // work around -> auto increment is good
+        $tweet->setTitle($tweet_post); // column name is mistaken TODO
+        $tweet->setStatus(true); 
+        $em->persist($tweet);
+        $em->flush();
 
-  
-       $rows = [];
-       $_id = 0 ;
-       foreach ($tweets as $tweet){
-            $_id += 1;
-            array_push($rows, ["id" => $_id , 
-                               "tweet" =>  $tweet->getTitle()
-                               ]);
-       }
-        return new JsonResponse($rows);
+        return true;
+
     }
    
 }
