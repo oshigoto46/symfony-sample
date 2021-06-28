@@ -22,7 +22,14 @@ class TweetPost2Controller extends AbstractController
     public function TweetsPost(Request $request)
     {
         $tweet_content = json_decode($request->getContent(), true)['tweet_post']["tweet"];
-        $ret =  $this->_create($tweet_content);   
+        $type          = json_decode($request->getContent(), true)['type']["type"];
+
+        if($type === "create"){
+                    $ret =  $this->_create($tweet_content);   
+        }else if($type === "delete"){
+                    $id          = json_decode($request->getContent(), true)['id']["id"];
+                    $ret =  $this->_delete($id);  
+        }
         // var_dump("====var_dump====");
         // var_dump($tweet_content);
         //var_dump(json_decode($request->getContent(), true));
@@ -51,6 +58,23 @@ class TweetPost2Controller extends AbstractController
         $tweet->setTitle($tweet_post); // column name is mistaken TODO
         $tweet->setStatus(true); 
         $em->persist($tweet);
+        $em->flush();
+
+        return true;
+
+    }
+
+    private function _delete($id){
+
+        if(is_null($tweet_post) || !is_string($tweet_post)){
+            return  false; 
+        }
+ 
+        $em = $this->getDoctrine()->getManager();
+        $tweet = new TweetPost;
+        // $tweet->setId(11); // work around -> auto increment is good
+        $tweet->setId($id); // column name is mistaken TODO
+        $em->remove($tweet);
         $em->flush();
 
         return true;

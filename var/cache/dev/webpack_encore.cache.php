@@ -11,9 +11,6 @@ return [[
 0 => [
     'entrypoints' => [
         'app' => [
-            'css' => [
-                'build/app.css',
-            ],
             'js' => [
                 'build/app.js',
             ],

@@ -62,17 +62,31 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink' => 1,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 0,
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
+'App%5CController%5CIndexSimpleTwitterController' => 0,
+'[C]App%5CController%5CIndexSimpleTwitterController' => 1,
+'App%5CController%5CIndexSimpleTwitterController%23index' => 2,
+'[C]App%5CController%5CIndexSimpleTwitterController%23index' => 1,
+'App%5CController%5CIndexSimpleTwitterController%23create' => 3,
+'[C]App%5CController%5CIndexSimpleTwitterController%23create' => 1,
 'App%5CController%5CIndexTwitterController' => 0,
 '[C]App%5CController%5CIndexTwitterController' => 1,
-'App%5CController%5CIndexTwitterController%23index' => 2,
-'[C]App%5CController%5CIndexTwitterController%23index' => 1,
+'App%5CController%5CIndexTwitterController%23spa_index' => 4,
+'[C]App%5CController%5CIndexTwitterController%23spa_index' => 1,
+'App%5CController%5CTweetGetController' => 0,
+'[C]App%5CController%5CTweetGetController' => 1,
+'App%5CController%5CTweetGetController%23returnAPITweets' => 5,
+'[C]App%5CController%5CTweetGetController%23returnAPITweets' => 1,
+'App%5CController%5CTweetPost2Controller' => 0,
+'[C]App%5CController%5CTweetPost2Controller' => 1,
+'App%5CController%5CTweetPost2Controller%23TweetsPost' => 6,
+'[C]App%5CController%5CTweetPost2Controller%23TweetsPost' => 1,
+'App%5CController%5CTweetPost2Controller%23_create' => 0,
+'[C]App%5CController%5CTweetPost2Controller%23_create' => 1,
 'App%5CController%5CTweetPostController' => 0,
 '[C]App%5CController%5CTweetPostController' => 1,
-'App%5CController%5CTweetPostController%23create' => 3,
-'[C]App%5CController%5CTweetPostController%23create' => 1,
-'App%5CController%5CTweetPostController%23returnAPITweets' => 4,
-'[C]App%5CController%5CTweetPostController%23returnAPITweets' => 1,
-'App%5CEntity%5CProduct' => 5,
+'App%5CController%5CTweetPostController%23returnAPITweets1' => 7,
+'[C]App%5CController%5CTweetPostController%23returnAPITweets1' => 1,
+'App%5CEntity%5CProduct' => 8,
 '[C]App%5CEntity%5CProduct' => 1,
 'App%5CEntity%5CProduct%23getId' => 0,
 '[C]App%5CEntity%5CProduct%23getId' => 1,
@@ -80,14 +94,16 @@ return [[
 '[C]App%5CEntity%5CProduct%23getQuit' => 1,
 'App%5CEntity%5CProduct%23setQuit' => 0,
 '[C]App%5CEntity%5CProduct%23setQuit' => 1,
-'App%5CEntity%5CProduct%24id' => 6,
+'App%5CEntity%5CProduct%24id' => 9,
 '[C]App%5CEntity%5CProduct%24id' => 1,
-'App%5CEntity%5CProduct%24quit' => 7,
+'App%5CEntity%5CProduct%24quit' => 10,
 '[C]App%5CEntity%5CProduct%24quit' => 1,
-'App%5CEntity%5CTweetPost' => 8,
+'App%5CEntity%5CTweetPost' => 11,
 '[C]App%5CEntity%5CTweetPost' => 1,
 'App%5CEntity%5CTweetPost%23getId' => 0,
 '[C]App%5CEntity%5CTweetPost%23getId' => 1,
+'App%5CEntity%5CTweetPost%23setId' => 0,
+'[C]App%5CEntity%5CTweetPost%23setId' => 1,
 'App%5CEntity%5CTweetPost%23getTitle' => 0,
 '[C]App%5CEntity%5CTweetPost%23getTitle' => 1,
 'App%5CEntity%5CTweetPost%23setTitle' => 0,
@@ -96,11 +112,11 @@ return [[
 '[C]App%5CEntity%5CTweetPost%23getStatus' => 1,
 'App%5CEntity%5CTweetPost%23setStatus' => 0,
 '[C]App%5CEntity%5CTweetPost%23setStatus' => 1,
-'App%5CEntity%5CTweetPost%24id' => 6,
+'App%5CEntity%5CTweetPost%24id' => 12,
 '[C]App%5CEntity%5CTweetPost%24id' => 1,
-'App%5CEntity%5CTweetPost%24title' => 7,
+'App%5CEntity%5CTweetPost%24title' => 10,
 '[C]App%5CEntity%5CTweetPost%24title' => 1,
-'App%5CEntity%5CTweetPost%24status' => 9,
+'App%5CEntity%5CTweetPost%24status' => 13,
 '[C]App%5CEntity%5CTweetPost%24status' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
@@ -572,7 +588,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1624798859,
+1 => 1624907428,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -582,10 +598,10 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/',
+                    '/simple_post',
                 ],
                 'name' => [
-                    'to_do_list',
+                    'index_simple_twitter',
                 ],
             ],
         ],
@@ -626,6 +642,28 @@ return [[
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
+                    '/spa_post',
+                ],
+                'name' => [
+                    'tweet',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+5 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
                     '/api/tweetes',
                 ],
                 'name' => [
@@ -639,7 +677,51 @@ return [[
         []
     );
 },
-5 => static function () {
+6 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/tweet/post2',
+                ],
+                'name' => [
+                    'tweet_post2',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+7 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/api/tweetes4',
+                ],
+                'name' => [
+                    'public',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+8 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
@@ -660,7 +742,7 @@ return [[
         []
     );
 },
-6 => static function () {
+9 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Id'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Id')),
@@ -689,7 +771,7 @@ return [[
         []
     );
 },
-7 => static function () {
+10 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -717,7 +799,7 @@ return [[
         []
     );
 },
-8 => static function () {
+11 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
@@ -736,7 +818,38 @@ return [[
         []
     );
 },
-9 => static function () {
+12 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Id'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Id')),
+            clone ($p['Doctrine\\ORM\\Mapping\\GeneratedValue'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\GeneratedValue')),
+            clone ($p['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+            clone $p['Doctrine\\ORM\\Mapping\\GeneratedValue'],
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    2 => 'integer',
+                ],
+                'precision' => [
+                    2 => null,
+                ],
+                'scale' => [
+                    2 => null,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+            $o[1],
+            $o[2],
+            $o[3],
+        ],
+        []
+    );
+},
+13 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
