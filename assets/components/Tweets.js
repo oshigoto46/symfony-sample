@@ -36,25 +36,25 @@ function TweetsContainer() {
   };
 
   const deleteTweet = (tweet =null ,id , type ="delete") =>{
-     alert("not implemented");
-    // const requestOptions = {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({
-    //       "tweet_post": {
-    //             tweet
-    //     },
-    //     "type" :{
-    //             type
-    //     },
-    //     "id" :{
-    //       id
-    //     }
-    //     })
-    //  };
-    //  fetch('http://52.69.185.201:8080/tweet/post2', requestOptions)
-    //     .then(response => response.json())
-    //     //.then(data => this.setState({ tweet: data.id }));
+    alert("delete ok?");
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          "tweet_post": {
+                tweet
+        },
+        "type" :{
+                type
+        },
+        "id" :{
+          id
+        }
+        })
+     };
+     fetch('http://52.69.185.201:8080/tweet/post2', requestOptions)
+        .then(response => response.json())
+        //.then(data => this.setState({ tweet: data.id }));
   };
   
   useEffect(() => {
@@ -107,7 +107,7 @@ function TweetsContainer() {
     border: 'none',
     borderRadius: '4px',
     background: '#008080',
-    color: '#008080',
+    color: '#fff',
     fontSize: '5px',
     cursor: 'pointer',
     transition: '.3s background',
