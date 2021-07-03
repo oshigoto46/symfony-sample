@@ -11,7 +11,7 @@ function TweetsContainer() {
   const [loaded, setLoaded] = useState(false);
   const [error,  setError ] = useState(false);
   const [reloaded, setReloaded] = useState(false);
-  const [form,setForm] = useState(false);
+  const [form,setForm] = useState([]);
   const [tweetdata, setData] = useState([]);
 
   const postTweet = (tweet, id = null , type ="create") =>{
