@@ -1,7 +1,6 @@
 // ModalContainer.js
 import React, { Component } from 'react';
 import { useState, useEffect } from "react";
-import { ListItem } from '@material-ui/core';
 import "./App.css";
 
 function TweetsContainer() {
@@ -12,6 +11,7 @@ function TweetsContainer() {
   const [error,  setError ] = useState(false);
   const [reloaded, setReloaded] = useState(false);
   const [form,setForm] = useState([]);
+  const [id,setId]     = useState([]);
   const [tweetdata, setData] = useState([]);
 
   const postTweet = (tweet, id = null , type ="create") =>{
@@ -83,8 +83,8 @@ function TweetsContainer() {
     return;
   };
 
-  const handleDelete =(id) => {
-   // e.preventDefault();
+  const handleDelete =(e) => {
+    e.preventDefault();
     deleteTweet(id);
     return;
   };
@@ -145,9 +145,9 @@ function TweetsContainer() {
         {tweetdata.length > 0 ? tweetdata.map(function(d, idx){
               return (
               　<li key={idx}>tweet{tweetdata.length - idx} is  {padRight(d.tweet,"+",20) } 
-                       {/* <form onSubmit={handleDelete(idx)}> */}
-                         <input style={button2} type="submit" value="delete" /> 
-                       {/* </form> */}
+                       <form onSubmit={handleDelete}>
+                         <input style={button2} onChange={(e) => setId(idx)} type="submit" value="delete" /> 
+                       </form>
                 </li>)
          }): "no data"}
          </ul>
