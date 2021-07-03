@@ -3,5 +3,7 @@
  
 * replace .env.sample to .env
 
+* this is sample project to learn doctorin and testing 
+
 # License 
  MIT licence
